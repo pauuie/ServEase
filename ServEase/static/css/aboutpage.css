@@ -1,0 +1,18 @@
+.about-container {
+    border: 2px solid #4F6F52;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #ECE3CE;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    position: relative;
+}
+
+.about-container h1 {
+    font-family: Arial, sans-serif;
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 10px;
+}

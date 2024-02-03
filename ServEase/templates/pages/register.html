@@ -1,0 +1,33 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block content %}
+
+<div class="login-page">
+    <div class="form">
+      <div class="login">
+        <div class="login-header">
+          <h3>REGISTER</h3>
+          <br>
+        </div>
+      </div>
+      <form method="POST" action="">
+        {% csrf_token %}
+        {{form.username.label}}
+        {{form.username}}
+        {{form.email.label}}
+        {{form.email}}
+        {{form.password1.label}}
+        {{form.password1}}
+        {{form.password2.label}}
+        {{form.password2}}
+
+      <p class="text-muted">{{form.errors}}</p>
+        
+
+       <button id="loginButton">register</button>
+        
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

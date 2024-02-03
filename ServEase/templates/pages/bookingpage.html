@@ -1,0 +1,31 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block content %}
+<h1>My Bookings: {{total_bookings}}</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+     {% comment "" %}    <th>USER</th>   {% endcomment %}   
+        <th>PROVIDER</th>
+        <th>SERVICE</th>
+        <th>BOOKING DATE</th>
+        <th>BOOKING TIME</th>
+        <th>EDIT</th>
+    </tr>
+    <tr>
+        {% for booking in bookings %}
+        <td>{{booking.id}}</td>
+    {% comment "" %}  <td>{{booking.user}}</td>  {% endcomment %}    
+        <td>{{booking.service_provider}}</td>
+        <td>{{booking.service}}</td>
+        <td>{{booking.booking_date}}</td>
+        <td>{{booking.booking_time}}</td>
+        <td><a href="{% url 'update' booking.id %}">update</a></td>
+        <td><a href="{% url 'delete' booking.id %}">delete</a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

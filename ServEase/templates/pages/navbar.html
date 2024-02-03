@@ -1,0 +1,44 @@
+{% load static %}
+<nav class="top-panel">
+    <div class="left-section">
+        <img alt="logo" width="50" height="50" class="d-inline-block align-text-top" src="{% static 'images/logo.png' %}">
+        <div class="nav-username">
+            <span id="navbarUsername"></span>
+        </div>
+    </div>
+    <div class="nav-links">
+        <span id="hello-msg" style="margin-right:850px; color:#3A4D39; font-size:20px" >Hello,{{request.user}} </span>
+        <a href="{% url 'home' %}">HOME</a>
+        <a href="{% url 'about' %}">ABOUT</a>
+        <a href="{% url 'services' %}">SERVICES</a>
+        <a href="{% url 'bookings' %}">BOOKINGS</a>
+        <a href="{% url 'bookingform' %}">FORM</a>
+        <a href="{% url 'login' %}">LOGIN</a>
+
+        
+    <span><a href="{% url 'logout' %}">LOGOUT</a></span> 
+
+
+        
+    </div>
+</nav>
+
+{%comment%}
+<script>
+    var loggedInUser = localStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+    var formattedUsername = loggedInUser.toUpperCase();
+    document.getElementById('navbarUsername').innerHTML = 'WELCOME, ' + formattedUsername;
+}
+
+    document.addEventListener('DOMContentLoaded', function() {
+    var loggedInUser = localStorage.getItem('loggedInUser');
+    var loginLink = document.querySelector('.nav-links a[href*="Login"]');
+
+    if (loggedInUser) {
+        var formattedUsername = loggedInUser.toUpperCase();
+        loginLink.textContent = 'LOGOUT';
+    }
+});
+</script>
+{% endcomment %}

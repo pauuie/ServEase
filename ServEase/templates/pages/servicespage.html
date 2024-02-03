@@ -1,0 +1,30 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block content %}
+<h1>Total Services: {{ total_services }}</h1>
+<table class="service-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>PROVIDER</th>
+            <th>DESCRIPTION</th>
+            <th>ADDRESS</th>
+            <th>PRICE</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for service in services %}
+            <tr>
+                <td>{{ service.id }}</td>
+                <td>{{ service.title }}</td>
+                <td>{{ service.provider }}</td>
+                <td>{{ service.description }}</td>
+                <td>{{ service.address }}</td>
+                <td>{{ service.price }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

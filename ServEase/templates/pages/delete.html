@@ -1,0 +1,15 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block content %}
+
+<p>dedelete mo ba ? {{booking}}</p>
+
+
+<form method="POST">
+    {% csrf_token %}
+   <a href="{% url 'bookings' %}">Cancel<a/>
+    <input type="submit" name="Confirm">
+    
+</form>
+
+{% endblock %}
